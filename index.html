@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💖 cici Box</title>
+
+
+<style>
+
+#loadingTitle{
+
+font-size:38px;
+
+}
+
+
+#typing{
+
+font-size:22px;
+
+font-weight:normal;
+
+}
+*{
+box-sizing:border-box;
+}
+
+
+
+#loading{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#fff0f5;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+font-size:30px;
+
+font-weight:bold;
+
+color:#ff8fab;
+
+z-index:999;
+
+}
+body{
+
+margin:0;
+
+min-height:100vh;
+
+font-family:"Microsoft JhengHei";
+
+text-align:center;
+
+overflow:auto;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#fff0f5,
+
+#ffe6ee,
+
+#e8f8ff,
+
+#f4eaff
+
+);
+
+}
+/* ========================
+   🌙 深夜・凌晨海洋模式
+   ======================== */
+
+body.night-mode{
+
+    background:
+
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(100,180,220,0.18),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at 80% 80%,
+        rgba(70,140,190,0.15),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #183B52,
+        #28566E,
+        #3A667B,
+        #203F55
+    );
+
+    color:#E4F3F8;
+
+}
+
+
+/* 🌌 主卡片 */
+
+body.night-mode .app{
+
+    background:rgba(225,240,247,0.18);
+
+    box-shadow:
+    0 10px 40px rgba(5,30,50,0.25);
+
+}
+
+
+/* 🧊 Logo */
+
+body.night-mode .logo{
+
+    color:#D7F1FA;
+
+    text-shadow:
+    0 0 12px rgba(170,220,240,0.25);
+
+}
+
+
+/* 🌫 副標題 */
+
+body.night-mode .subtitle{
+
+    color:#B7D0DB;
+
+}
+
+
+/* 💬 訊息框 */
+
+body.night-mode .message{
+
+    background:rgba(43,91,115,0.85);
+
+    color:#E7F5FA;
+
+    box-shadow:
+    0 5px 20px rgba(5,30,50,0.25);
+
+}
+
+
+/* 🔘 按鈕 */
+
+body.night-mode button{
+
+    background:#4A7890;
+
+    color:#EDF8FC;
+
+}
+
+
+/* ✨ 按鈕滑過 */
+
+body.night-mode button:hover{
+
+    background:#5B8EA6;
+
+}
+
+
+/* 🌊 底部選單 */
+
+body.night-mode .menu{
+
+    border-top:1px solid #6793A7;
+
+}
+
+
+body.night-mode .menu div{
+
+    color:#C7DDE5;
+
+}
+
+
+/* 🖼 相片 */
+
+body.night-mode .photoCard{
+
+    background:rgba(43,91,115,0.9);
+
+    box-shadow:
+    0 8px 25px rgba(5,30,50,0.25);
+
+}
+
+
+body.night-mode .photoText{
+
+    color:#D7F1FA;
+
+}
+
+
+/* 🐱 cici 對話框 */
+
+body.night-mode #ciciSpeech,
+body.night-mode #cici2Speech{
+
+    background:#3B6D87;
+
+    color:#E8F7FC;
+
+    box-shadow:
+    0 5px 20px rgba(100,180,220,0.18);
+
+}
+
+
+
+.app{
+
+
+width:90%;
+
+max-width:420px;
+
+min-height:85vh;
+
+margin:40px auto 30px;
+
+
+background:rgba(255,255,255,0.88);
+
+
+border-radius:40px;
+
+
+padding:25px;
+
+
+position:relative;
+
+
+z-index:2;
+
+
+box-shadow:
+
+0 10px 30px rgba(255,150,180,0.3);
+
+
+}
+
+
+
+
+
+
+.logo{
+
+font-size:38px;
+
+font-weight:bold;
+
+color:#ff8fab;
+
+}
+
+
+
+.subtitle{
+
+font-size:18px;
+
+color:#999;
+
+margin-top:10px;
+
+}
+
+
+
+
+
+.message{
+
+
+margin:25px auto;
+
+
+padding:20px;
+
+
+width:90%;
+
+
+background:white;
+
+
+border-radius:30px;
+
+
+font-size:20px;
+
+
+color:#666;
+
+
+box-shadow:
+
+0 5px 15px rgba(0,0,0,0.08);
+
+
+}
+
+
+
+
+
+.buttons{
+
+
+display:grid;
+
+
+grid-template-columns:1fr 1fr;
+
+
+gap:12px;
+
+
+}
+
+
+
+button{
+
+
+padding:18px 5px;
+
+
+border:none;
+
+
+border-radius:25px;
+
+
+font-size:16px;
+
+
+background:#ffd6e0;
+
+
+cursor:pointer;
+
+
+transition:0.3s;
+
+
+}
+
+
+
+button:hover{
+
+
+transform:scale(1.05);
+
+
+background:#ffb3c6;
+
+
+}
+
+
+
+
+
+
+.menu{
+
+
+margin-top:40px;
+
+
+display:flex;
+
+
+justify-content:space-around;
+
+
+padding-top:15px;
+
+
+border-top:1px solid #ffd6e0;
+
+
+}
+
+
+
+.menu div{
+
+
+font-size:14px;
+
+
+color:#777;
+
+
+cursor:pointer;
+
+
+}
+.photoCard{
+
+background:white;
+
+width:90%;
+
+max-width:330px;
+
+margin:20px auto;
+
+padding:15px;
+
+border-radius:30px;
+
+box-shadow:0 8px 20px rgba(255,150,180,0.25);
+
+}
+
+
+.photoCard img{
+
+width:100%;
+
+border-radius:20px;
+
+}
+
+
+.photoText{
+
+margin-top:10px;
+
+font-size:18px;
+
+color:#ff8fab;
+
+font-weight:bold;
+
+}
+.ciciBox{
+position:fixed;
+top:20px;
+right:0px;
+display:flex;
+align-items:center;
+gap:8px;
+z-index:3;
+}
+.ciciBox{
+position:fixed;
+top:20px;
+right:0px;
+display:flex;
+align-items:center;
+gap:8px;
+z-index:100;
+}
+
+
+/* ========================
+   🐱 右上角 cici 對話氣泡
+   ======================== */
+
+#ciciSpeech{
+
+position:absolute;
+
+right:75px;
+
+top:10px;
+
+width:190px;
+
+padding:12px 15px;
+
+background:rgba(255,255,255,0.38);
+
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
+
+color:#666;
+
+border-radius:20px;
+
+font-size:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+border:1px solid rgba(255,255,255,0.45);
+
+z-index:101;
+
+}
+/* ========================
+   🐱 cici 台詞淡入淡出
+   ======================== */
+
+#ciciSpeech{
+    opacity:1;
+    transition:opacity 0.5s ease;
+}
+
+#ciciSpeech.fade{
+    opacity:0;
+}
+.cici{
+
+width:90px;
+
+height:auto;
+
+display:block;
+
+animation:float 3s infinite ease-in-out;
+
+}
+#cici2Speech{
+
+position:absolute;
+
+left:75px;
+
+bottom:75px;
+
+width:190px;
+
+padding:12px 15px;
+
+background:rgba(255,255,255,0.38);
+
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
+
+color:#666;
+
+border-radius:20px;
+
+font-size:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.12);
+
+border:1px solid rgba(255,255,255,0.45);
+
+z-index:101;
+
+}
+
+.cici2Box{
+
+position:fixed;
+
+left:0px;
+
+bottom:15px;
+
+z-index:100;
+
+cursor:pointer;
+
+pointer-events:auto;
+
+}
+.cici2{
+
+width:90px;
+
+height:auto;
+
+display:block;
+
+animation:float 4s infinite ease-in-out;
+
+cursor:pointer;
+
+pointer-events:auto;
+
+}
+@keyframes float{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+
+
+@media (max-width: 600px){
+
+    /* 右上角 cici */
+    .ciciBox{
+        top:15px;
+        right:0px;
+
+        display:block;
+    }
+
+    .cici{
+        width:70px;
+    }
+
+   #ciciSpeech{
+    position:absolute;
+
+    right:55px;
+    top:0;
+
+    width:120px;
+
+    padding:8px;
+
+    font-size:12px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.38);
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,0.45);
+}
+
+
+    /* 左下角 cici */
+    .cici2Box{ 
+    left:0px; 
+    bottom:10px;
+
+    padding:0;
+
+    cursor:pointer;
+
+    z-index:100;
+    pointer-events:auto;
+}
+
+.cici2{
+    width:70px;
+    cursor:pointer;
+}
+
+    #cici2Speech{
+    position:absolute;
+
+    left:50px;
+    bottom:55px;
+
+    width:120px;
+
+    padding:8px;
+
+    font-size:12px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.38);
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    border:1px solid rgba(255,255,255,0.45);
+}
+
+}
+/* ========================
+   🌌 深夜星空氛圍
+   ======================== */
+
+body.night-mode::before{
+
+    content:"";
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(130,190,230,0.18) 0px,
+        transparent 2px
+    ),
+
+    radial-gradient(
+        circle at 75% 15%,
+        rgba(160,210,240,0.15) 0px,
+        transparent 2px
+    ),
+
+    radial-gradient(
+        circle at 35% 70%,
+        rgba(100,170,220,0.13) 0px,
+        transparent 2px
+    ),
+
+    radial-gradient(
+        circle at 85% 75%,
+        rgba(150,210,240,0.12) 0px,
+        transparent 2px
+    );
+
+}
+
+
+/* 🌊 淡淡的深海光 */
+
+body.night-mode::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:500px;
+    height:500px;
+
+    top:-200px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    pointer-events:none;
+
+    z-index:0;
+
+    background:
+
+    radial-gradient(
+        circle,
+        rgba(70,150,210,0.10),
+        transparent 65%
+    );
+
+}
+
+
+/* 🌌 讓主要內容浮在氛圍上面 */
+
+body.night-mode .app,
+body.night-mode .ciciBox,
+body.night-mode .cici2Box{
+
+    z-index:2;
+
+}
+/* ========================
+   🌙 深夜模式・左下角 cici
+   ======================== */
+
+body.night-mode .cici2{
+
+    filter:
+    drop-shadow(0 0 8px rgba(150,210,255,0.45));
+
+}
+</style>
+
+</head>
+
+
+
+<body>
+
+<div id="loading">
+
+<div id="loadingTitle">
+💖 cici Box
+</div>
+
+<br>
+
+<div id="typing"></div>
+
+<br>
+
+✨ ✨ ✨
+
+</div>
+
+<div class="ciciBox">
+
+<div id="ciciSpeech">
+💖 歡迎回來～
+</div>
+
+<img src="images/cici.png" class="cici">
+</div>
+
+
+
+<div class="cici2Box">
+
+<div id="cici2Speech">
+今天也辛苦啦 ✨
+<br>
+歡迎回來，我一直都在
+</div>
+
+<img src="images/cici2.png" class="cici2" onclick="ciciTalk()">
+
+</div>
+
+<div class="app">
+
+
+
+<div class="logo">
+
+💖 cici Box 💖
+
+</div>
+
+
+
+<div class="subtitle">
+
+Welcome Home 🌸
+
+</div>
+
+
+
+<div class="message" id="message">
+
+💖 cici Box 💖
+<br><br>
+歡迎回來，我一直都在 🌸
+
+</div>
+
+
+
+
+<div class="buttons">
+
+
+<button onclick="sad()">
+
+🥺
+
+<br>
+
+今天不開心
+
+</button>
+
+
+
+<button onclick="happy()">
+
+🌈
+
+<br>
+
+分享快樂
+
+</button>
+
+
+
+<button onclick="tired()">
+
+😴
+
+<br>
+
+我好累
+
+</button>
+
+
+
+<button onclick="love()">
+
+💖
+
+<br>
+
+給我鼓勵
+
+</button>
+
+
+
+<button onclick="quote()">
+
+🍬
+
+<br>
+
+今日一句
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="menu">
+
+
+<div onclick="home()">
+
+🏠
+
+<br>
+
+Home
+
+</div>
+
+
+
+<div onclick="musicPage()">
+
+🎵
+
+<br>
+
+Music
+
+</div>
+
+
+
+<div onclick="messagePage()">
+
+💌
+
+<br>
+
+Message
+
+</div>
+
+
+<div onclick="togetherPage()">
+
+📅
+
+<br>
+
+Together
+
+</div>
+
+<div onclick="memoryPage()">
+
+🖼
+
+<br>
+
+Memory
+
+</div>
+
+
+
+<div onclick="settings()">
+
+⚙️
+
+<br>
+
+Settings
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
