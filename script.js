@@ -148,32 +148,32 @@ let songs = [
 
 {
 name:"Japan Music 1",
-file:"music/japan_music1.mp3"
+file:"japan_music1.mp3"
 },
 
 {
 name:"Japan Music 2",
-file:"music/japan_music2.mp3"
+file:"japan_music2.mp3"
 },
 
 {
 name:"Love Story",
-file:"music/love_story.mp3"
+file:"love_story.mp3"
 },
 
 {
 name:"Summer Music 1",
-file:"music/summer_music1.mp3"
+file:"summer_music1.mp3"
 },
 
 {
 name:"Summer Music 2",
-file:"music/summer_music2.mp3"
+file:"summer_music2.mp3"
 },
 
 {
 name:"The Way I Still Love You",
-file:"music/the_way_i_still_love_you.mp3"
+file:"the_way_i_still_love_you.mp3"
 }
 
 ];
@@ -939,7 +939,7 @@ message.innerHTML =
 
 <div class="photoCard">
 
-<img src="images/memory/demi/demi${number}.jpg">
+<img src="demi${number}.jpg">
 
 
 <div class="photoText">
@@ -999,7 +999,7 @@ message.innerHTML =
 
 <div class="photoCard">
 
-<img src="images/memory/us/us${number}.jpg">
+<img src="us${number}.jpg">
 
 
 <div class="photoText">
